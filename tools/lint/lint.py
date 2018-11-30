@@ -70,7 +70,7 @@ def all_filesystem_paths(repo_root, subdir=None):
         expanded_path = repo_root
     for dirpath, dirnames, filenames in path_filter(walk(expanded_path)):
         for filename, _ in filenames:
-            path = os.path.join(dirpath, filename)
+            path = os.path.join(expanded_path, dirpath, filename)
             yield path
 
 
